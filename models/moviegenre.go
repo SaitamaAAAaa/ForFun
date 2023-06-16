@@ -1,8 +1,3 @@
-/*
- * @File: models.movie_genre.go
- * @Description: Defines Movie Genre information will be returned to the clients
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package models
 
 import "gopkg.in/mgo.v2/bson"

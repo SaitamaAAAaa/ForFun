@@ -1,22 +1,15 @@
-/*
- * @File: main.go
- * @Description: Creates HTTP server & API groups of the Movie Service
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package main
 
 import (
 	"io"
 	"os"
 
-	// "./common"
-	// "./controllers"
-	// "./databases"
+	"movie-microservice/common"
+	"movie-microservice/controllers"
+	"movie-microservice/databases"
+
 	"github.com/gin-gonic/contrib/jwt"
 	"github.com/gin-gonic/gin"
-	"main.go/common"
-	"main.go/controllers"
-	"main.go/databases"
 )
 
 // Main manages main golang application
@@ -56,14 +49,6 @@ func (m *Main) initServer() error {
 
 	return nil
 }
-
-// @title MovieManagement Service API Document
-// @version 1.0
-// @description List APIs of MovieManagement Service
-// @termsOfService http://swagger.io/terms/
-
-// @host 107.113.53.47:8809
-// @BasePath /api/v1
 func main() {
 	m := Main{}
 

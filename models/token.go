@@ -1,8 +1,3 @@
-/*
- * @File: models.token.go
- * @Description: Defines Token information will be returned to the clients
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package models
 
 // Token string

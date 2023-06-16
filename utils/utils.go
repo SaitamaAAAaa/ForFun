@@ -1,8 +1,3 @@
-/*
- * @File: utils.utils.go
- * @Description: Reusable stuffs for services
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package utils
 
 import (
@@ -10,9 +5,10 @@ import (
 	"time"
 
 	// "../common"
+	"movie-microservice/common"
+
 	jwt_lib "github.com/dgrijalva/jwt-go"
 	"gopkg.in/mgo.v2/bson"
-	"main.go/common"
 )
 
 // SdtClaims defines the custom claims

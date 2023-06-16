@@ -1,14 +1,10 @@
-/*
- * @File: daos.movie.go
- * @Description: Implements Movie CRUD functions for MongoDB
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package daos
 
 import (
+	"movie-microservice/databases"
+	"movie-microservice/models"
+
 	"gopkg.in/mgo.v2/bson"
-	"main.go/databases"
-	"main.go/models"
 )
 
 // Movie manages Movie CRUD

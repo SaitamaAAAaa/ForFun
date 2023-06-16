@@ -1,17 +1,13 @@
-/*
- * @File: databases.mongodb.go
- * @Description: Handles MongoDB connections
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package databases
 
 import (
 	"time"
 
 	// "../common"
+	"movie-microservice/common"
+
 	log "github.com/sirupsen/logrus"
 	mgo "gopkg.in/mgo.v2"
-	"main.go/common"
 )
 
 // MongoDB manages MongoDB connection

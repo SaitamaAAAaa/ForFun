@@ -1,8 +1,3 @@
-/*
- * @File: common.common.go
- * @Description: Defines common information of the service
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package common
 
 import (

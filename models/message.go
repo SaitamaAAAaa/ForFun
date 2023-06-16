@@ -1,8 +1,3 @@
-/*
- * @File: models.message.go
- * @Description: Defines Message information will be returned to the clients
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package models
 
 // Message defines the response message

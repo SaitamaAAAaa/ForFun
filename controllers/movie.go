@@ -1,8 +1,3 @@
-/*
- * @File: controllers.movie.go
- * @Description: Implements Movie API logic functions
- * @Author: Nguyen Truong Duong (seedotech@gmail.com)
- */
 package controllers
 
 import (
@@ -10,12 +5,13 @@ import (
 	"net/http"
 	"net/url"
 
+	"movie-microservice/common"
+	"movie-microservice/daos"
+	"movie-microservice/models"
+
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/mgo.v2/bson"
-	"main.go/common"
-	"main.go/daos"
-	"main.go/models"
 )
 
 // Movie manages Movie CRUD
@@ -23,17 +19,6 @@ type Movie struct {
 	movieDAO daos.Movie
 }
 
-// Login godoc
-// @Summary Log in to the service
-// @Description Log in to the service
-// @Tags admin
-// @Security ApiKeyAuth
-// @Accept  multipart/form-data
-// @Param user formData string true "Username"
-// @Param password formData string true "Password"
-// @Failure 401 {object} models.Error
-// @Success 200 {object} models.Token
-// @Router /login [post]
 func (m *Movie) Login(ctx *gin.Context) {
 	username := ctx.PostForm("user")
 	password := ctx.PostForm("password")
@@ -62,17 +47,6 @@ func (m *Movie) Login(ctx *gin.Context) {
 	}
 }
 
-// AddMovie godoc
-// @Summary Add a new movie
-// @Description Add a new movie
-// @Tags movie
-// @Accept  json
-// @Produce  json
-// @Param Authorization header string true "Token"
-// @Param user body models.AddMovie true "Add Movie"
-// @Failure 401 {object} models.Error
-// @Success 200 {object} models.Message
-// @Router /movies [post]
 func (m *Movie) AddMovie(ctx *gin.Context) {
 	var movie models.Movie
 	if err := ctx.BindJSON(&movie); err != nil {
@@ -90,16 +64,6 @@ func (m *Movie) AddMovie(ctx *gin.Context) {
 	}
 }
 
-// ListMovies godoc
-// @Summary List all existing Movies
-// @Description List all existing Movies
-// @Tags movie
-// @Accept  json
-// @Produce  json
-// @Param Authorization header string true "Token"
-// @Failure 404 {object} models.Error
-// @Success 200 {object} models.Movie
-// @Router /movies/list [get]
 func (m *Movie) ListMovies(ctx *gin.Context) {
 	var movies []models.Movie
 	var err error
